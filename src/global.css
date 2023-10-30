@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  font-family: sans-serif;
+}
+body {
+  background-color: var(--main-bg-color);
+}
+:root {
+  --primary-color: #fff;
+  --main-bg-color: #1f1f1f;
+  --card-color: #4c22c3;
+  --input-color: #5a31d0;
+}
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 50px;
+  padding-right: 50px;
+}
