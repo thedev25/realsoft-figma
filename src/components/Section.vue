@@ -29,34 +29,46 @@
           />
         </h1>
       </div>
-      <div class="section__card">
-        <form action="">
-          <div
-            style="
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-            "
-          >
-            <input type="text" placeholder="Имя" />
-            <input type="tel" placeholder="+998" />
+      <Form />
+      <div class="about">
+        <div class="about__title">
+          <h2>Немного о нас</h2>
+          <p>
+            Разработка профессиональных информационных систем. Более 20 лет мы
+            создаем программные продукты, которые упрощают и оптимизируют
+            рабочие процессы каждого.
+          </p>
+        </div>
+        <div class="about__card">
+          <div class="card__item">
+            <div class="item item_one"></div>
+            <div class="item item_two">
+              <h3>21+</h3>
+              <p>Лет уникального опыта</p>
+            </div>
+            <div class="item item_three">
+              <h3>200+</h3>
+              <p>Специалистов</p>
+            </div>
+            <div class="item item_four">
+              <h3>30+</h3>
+              <p>Реализованых проектов</p>
+            </div>
           </div>
-          <select name="select">
-            <option value="value1" selected>
-              Выберите направление стажировки
-            </option>
-            <option value="value2">Значение 2</option>
-            <option value="value3">Значение 3</option>
-          </select>
-          <button>Отправить заявку на участие</button>
-        </form>
+        </div>
       </div>
     </section>
   </div>
 </template>
 <script>
+import Form from "./Form.vue";
+
 export default {
   name: "SectioN",
+
+  components: {
+    Form,
+  },
 };
 </script>
 <style>
@@ -66,7 +78,9 @@ section {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 8vw;
 }
+/* Section---Title */
 section .section__title h1 {
   font-size: 6vw;
   text-align: center;
@@ -78,20 +92,105 @@ section .section__title h1 .img2 {
   height: 65px;
   width: 60px;
 }
-section .section__card form {
-  width: 70vw;
-  height: max-content;
-  background: var(--card-color);
-  box-shadow: 4.27751px 8.55502px 0px 0px #fff;
+/* Section---Title */
+/* Section---About */
+section .about {
+  margin-top: 20vw;
+}
+/* About--title */
+section .about .about__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 2.2vw;
+}
+section .about .about__title h2 {
+  font-size: 5.5vw;
+  letter-spacing: -1.48px;
+  color: var(--primary-color);
+}
+section .about .about__title p {
+  max-width: 500px;
+  color: var(--primary-color);
+  text-align: center;
+  font-size: 1.4vw;
+}
+/* About--title */
+/* * */
+/* About--Card */
+section .about .about__card {
+  margin-top: 70px;
+}
+section .about .about__card .card__item {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  margin-bottom: 50px;
+}
+section .about .about__card .item {
+  flex-grow: 1;
+  box-shadow: 0px 4.27751px 0px 0px #fff;
+  display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  padding-left: 50px;
 }
-section .section__card form input {
-  width: 25vw;
-  padding: 20px 25px;
-  background-color: var(--input-color);
-  border: none;
-  outline: none;
+section .about .about__card .item h3 {
+  font-size: 6vw;
+  color: var(--primary-color);
+  font-weight: 400;
+  letter-spacing: -1.68px;
 }
+section .about .about__card .item:nth-child(2) h3 {
+  color: var(--main-bg-color);
+}
+section .about .about__card .item:nth-child(2) p {
+  color: var(--main-bg-color);
+}
+section .about .about__card .item p {
+  font-size: 1.6vw;
+  color: var(--primary-color);
+  font-weight: 400;
+  letter-spacing: -1.68px;
+}
+section .about .about__card .card__item .item:nth-child(1) {
+  width: 35vw;
+  height: 40vh;
+  background-image: url("../assets/Images/section/ItemImgOne.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 4.27751px 4.27751px 0px 0px #fff;
+}
+section .about .about__card .card__item .item:nth-child(2) {
+  width: 45vw;
+  height: 240px;
+  background-image: url("../assets/Images/section/ItemImgTwo.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-left: 15px;
+}
+section .about .about__card .card__item .item:nth-child(3) {
+  width: 45vw;
+  height: 240px;
+  background-image: url("../assets/Images/section/ItemImgThree.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+section .about .about__card .card__item .item:nth-child(4) {
+  width: 35vw;
+  height: 40vh;
+  background-image: url("../assets/Images/section/ItemImgFour.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-left: 10px;
+}
+
+/* About--Card */
+
+/* Section---About */
 </style>
