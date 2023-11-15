@@ -57,6 +57,35 @@
           </div>
         </div>
       </div>
+      <div class="service">
+        <div class="service__box">
+          <div class="card item_left">
+            <div class="card__title">
+              <h2>
+                Почему <br />
+                RealSoft Academy
+              </h2>
+
+              <p>
+                Мақсадимиз 1 000 000 тажрибали мутахассисларни тайёрлаш.
+                Мамлакатимизнинг барча ҳудудларини қамраб олиш. Халқаро миқёсда
+                тан олинган сертификатларни тақдим этиш. Чет элда энг талабчан
+                IT академияси мақомига эришиш
+              </p>
+            </div>
+          </div>
+          <div
+            class="card item_right"
+            v-for="(item, index) in items"
+            :key="index"
+          >
+            <div class="card__desc">
+              <h2>{{ item.title }}</h2>
+              <p>{{ item.desc }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   </div>
 </template>
@@ -68,6 +97,29 @@ export default {
 
   components: {
     Form,
+  },
+  data() {
+    return {
+      items: [
+        {
+          src: require(""),
+          title: "Гибкая формы обучения",
+          desc: "Сиз ўзингиз учун қулай кун ва вақтни танлаш имкониятига эгасиз",
+        },
+        {
+          title: "Гибкая формы обучения",
+          desc: "Сиз ўзингиз учун қулай кун ва вақтни танлаш имкониятига эгасиз",
+        },
+        {
+          title: "Гибкая формы обучения",
+          desc: "Сиз ўзингиз учун қулай кун ва вақтни танлаш имкониятига эгасиз",
+        },
+        {
+          title: "Гибкая формы обучения",
+          desc: "Сиз ўзингиз учун қулай кун ва вақтни танлаш имкониятига эгасиз",
+        },
+      ],
+    };
   },
 };
 </script>
@@ -167,7 +219,7 @@ section .about .about__card .card__item .item:nth-child(1) {
 }
 section .about .about__card .card__item .item:nth-child(2) {
   width: 45vw;
-  height: 240px;
+  height: 40vh;
   background-image: url("../assets/Images/section/ItemImgTwo.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -175,7 +227,7 @@ section .about .about__card .card__item .item:nth-child(2) {
 }
 section .about .about__card .card__item .item:nth-child(3) {
   width: 45vw;
-  height: 240px;
+  height: 40vh;
   background-image: url("../assets/Images/section/ItemImgThree.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -191,6 +243,26 @@ section .about .about__card .card__item .item:nth-child(4) {
 }
 
 /* About--Card */
-
 /* Section---About */
+/* Service--Card */
+section .service {
+  width: 100%;
+}
+section .service .service__box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--primary-color);
+}
+section .service .service__box .item_left .card__title h2 {
+  font-size: 5vw;
+  font-weight: 400;
+  letter-spacing: -1.48px;
+}
+section .service .service__box .item_left .card__title p {
+  max-width: 580px;
+  font-size: 1.3vw;
+  font-weight: 400;
+  padding-top: 30px;
+}
 </style>
