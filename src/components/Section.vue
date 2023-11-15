@@ -73,15 +73,24 @@
                 IT академияси мақомига эришиш
               </p>
             </div>
+            <div class="card__photo">
+              <img
+                :src="require('../assets/Images/section/ServiceBigImg.png')"
+                alt=""
+              />
+            </div>
           </div>
-          <div
-            class="card item_right"
-            v-for="(item, index) in items"
-            :key="index"
-          >
-            <div class="card__desc">
-              <h2>{{ item.title }}</h2>
-              <p>{{ item.desc }}</p>
+          <div>
+            <div class="card item_right">
+              <div
+                class="card__desc active"
+                v-for="(item, index) in items"
+                :key="index"
+              >
+                <img :src="item.src" alt="" />
+                <h4>{{ item.title }}</h4>
+                <p>{{ item.desc }}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -102,21 +111,24 @@ export default {
     return {
       items: [
         {
-          src: require(""),
+          src: require("../../src/assets/Images/section/ServiceIconOne.svg"),
           title: "Гибкая формы обучения",
           desc: "Сиз ўзингиз учун қулай кун ва вақтни танлаш имкониятига эгасиз",
         },
         {
-          title: "Гибкая формы обучения",
-          desc: "Сиз ўзингиз учун қулай кун ва вақтни танлаш имкониятига эгасиз",
+          src: require("../../src/assets/Images/section/ServiceIconTwo.svg"),
+          title: "Трудоустройство",
+          desc: "После успешного прохождения стаживровки поможем с трудоустройством на работу",
         },
         {
-          title: "Гибкая формы обучения",
-          desc: "Сиз ўзингиз учун қулай кун ва вақтни танлаш имкониятига эгасиз",
+          src: require("../../src/assets/Images/section/ServiceIconThree.svg"),
+          title: "Опытные преподователи",
+          desc: "Мы предлагаем вам наставников с практическим опытом",
         },
         {
-          title: "Гибкая формы обучения",
-          desc: "Сиз ўзингиз учун қулай кун ва вақтни танлаш имкониятига эгасиз",
+          src: require("../../src/assets/Images/section/ServiceIconFour.svg"),
+          title: "Качетсвенное обучение",
+          desc: "Мы предлагаем вам наставников с практическим  опытом",
         },
       ],
     };
@@ -243,26 +255,71 @@ section .about .about__card .card__item .item:nth-child(4) {
 }
 
 /* About--Card */
-/* Section---About */
+
 /* Service--Card */
 section .service {
   width: 100%;
+  margin-top: 15vw;
 }
 section .service .service__box {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   color: var(--primary-color);
+  /* position: relative; */
+}
+
+section .service .service__box .item_left {
+  position: relative;
+}
+section .service .service__box .item_left .card__photo {
+  position: absolute;
+  left: -100px;
+  top: 62%;
 }
 section .service .service__box .item_left .card__title h2 {
   font-size: 5vw;
   font-weight: 400;
   letter-spacing: -1.48px;
 }
+
 section .service .service__box .item_left .card__title p {
   max-width: 580px;
   font-size: 1.3vw;
   font-weight: 400;
   padding-top: 30px;
+}
+
+section .service .service__box .item_right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+section .service .service__box .item_right .card__desc {
+  width: 42vw;
+  height: 300px;
+  background: #282828;
+  box-shadow: 5px 5px 0px 0px #4c22c3;
+  transition: 0.3s;
+  padding-top: 50px;
+  padding-left: 40px;
+}
+section .service .service__box .item_right .card__desc:hover {
+  background: #4c22c3;
+  box-shadow: 4.28571px 4.28571px 0px 0px #03fe33;
+}
+
+section .service .service__box .item_right .card__desc h4 {
+  padding-top: 50px;
+  font-size: 2vw;
+  font-weight: 500;
+}
+section .service .service__box .item_right .card__desc p {
+  max-width: 510px;
+  font-size: 20px;
+  padding-top: 15px;
+  font-weight: 400;
+  line-height: 26px;
 }
 </style>
